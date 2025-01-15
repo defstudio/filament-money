@@ -85,7 +85,7 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            // Css::make('filament-money-styles', __DIR__ . '/../resources/dist/filament-money.css'),
+            Css::make('filament-money-styles', __DIR__ . '/../resources/dist/filament-money.css'),
             Js::make('filament-money-scripts', __DIR__ . '/../resources/dist/filament-money.js'),
         ];
     }
