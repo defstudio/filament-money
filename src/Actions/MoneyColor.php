@@ -6,17 +6,17 @@ use Filament\Support\Colors\Color;
 
 class MoneyColor
 {
-    public function get_color_class(float|null|string $value, bool $inverted = false): string
+    public function getColorClass(float|null|string $value, bool $inverted = false): string
     {
-        return $this->compute_color($value, 'class', $inverted) ?? '';
+        return $this->computeColor($value, 'class', $inverted) ?? '';
     }
 
-    public function get_filament_color(float|null|string $value, bool $inverted = false): array|null
+    public function getFilamentColor(float|null|string $value, bool $inverted = false): array|null
     {
-        return $this->compute_color($value, 'filament', $inverted);
+        return $this->computeColor($value, 'filament', $inverted);
     }
 
-    protected function compute_color(float|null|string $value, string $type, bool $inverted = false): string|array|null
+    protected function computeColor(float|null|string $value, string $type, bool $inverted = false): string|array|null
     {
         if (empty($value)) {
             $value = 0;
@@ -44,7 +44,7 @@ class MoneyColor
     protected function red(string $type): string|array
     {
         return match ($type) {
-            'class' => '!text-red-600 ![-webkit-text-fill-color:theme(colors.red.600)]',
+            'class' => 'defstudio-money-color-red',
             'filament' => Color::Red
         };
     }
@@ -52,7 +52,7 @@ class MoneyColor
     protected function green(string $type): string|array
     {
         return match ($type) {
-            'class' => '!text-green-600 ![-webkit-text-fill-color:theme(colors.green.600)]',
+            'class' => 'defstudio-money-color-green',
             'filament' => Color::Green
         };
     }

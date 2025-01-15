@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-function round_number(num, scale = 2) {
+export function round_number(num, scale = 2) {
     if(!("" + num).includes("e")) {
         // noinspection JSCheckFunctionSignatures
         return +(Math.round(num + "e+" + scale)  + "e-" + scale);
@@ -15,11 +15,11 @@ function round_number(num, scale = 2) {
     }
 }
 
-function format_money(value, scale = 2) {
+export function format_money(value, scale = 2) {
     return '€ ' + format_number(value, scale);
 }
 
-function format_number(value, scale = 2) {
+export function format_number(value, scale = 2) {
     if (!value) {
         value = 0;
     }
@@ -31,7 +31,7 @@ function format_number(value, scale = 2) {
     return `${value}`.replace('.', ',').replace(/\d(?=(\d{3})+,)/g, '$&.');
 }
 
-function money_color_class(value, inverted = false) {
+export function money_color_class(value, inverted = false) {
     if (!value) {
         value = 0
     }

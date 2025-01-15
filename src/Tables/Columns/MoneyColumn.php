@@ -9,9 +9,9 @@ use Illuminate\Support\Number;
 
 class MoneyColumn extends TextColumn
 {
-    protected bool|Closure $invert_value = false;
-    protected bool|Closure $invert_color = false;
-    protected bool $hide_zeros = false;
+    protected bool|Closure $invertedValue = false;
+    protected bool|Closure $invertedColor = false;
+    protected bool|Closure $hiddenZeros = false;
 
     protected function setUp(): void
     {
@@ -19,10 +19,10 @@ class MoneyColumn extends TextColumn
 
         $this->alignRight();
 
-        $this->color(fn($state) => app(MoneyColor::class)->get_filament_color($state, $this->evaluate($this->invert_color)));
+        $this->color(fn($state) => app(MoneyColor::class)->getFilamentColor($state, $this->evaluate($this->invertedColor)));
 
         $this->formatStateUsing(function($state) {
-            if($state == 0){
+            if($state == 0 && $this->evaluate($this->hiddenZeros)) {
                 return null;
             }
 
@@ -34,7 +34,7 @@ class MoneyColumn extends TextColumn
                 return $state;
             }
 
-            if ($this->evaluate($this->invert_value)) {
+            if ($this->evaluate($this->invertedValue)) {
                 $state = -$state;
             }
 
@@ -42,21 +42,21 @@ class MoneyColumn extends TextColumn
         });
     }
 
-    public function hide_zeros(): self
+    public function hideZeros(bool|Closure $hide = true): self
     {
-        $this->hide_zeros = true;
+        $this->hiddenZeros = $hide;
         return $this;
     }
 
-    public function invert_value(bool|Closure $invert = true): self
+    public function invertValue(bool|Closure $invert = true): self
     {
-        $this->invert_value = $invert;
+        $this->invertedValue = $invert;
         return $this;
     }
 
-    public function invert_color(bool|Closure $invert = true): self
+    public function invertColor(bool|Closure $invert = true): self
     {
-        $this->invert_color = $invert;
+        $this->invertedColor = $invert;
         return $this;
     }
 }
