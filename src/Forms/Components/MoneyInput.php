@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnused */
+<?php
+
+/** @noinspection PhpUnused */
 
 namespace DefStudio\FilamentMoney\Forms\Components;
 
@@ -8,8 +10,9 @@ use Symfony\Component\Intl\Currencies;
 
 class MoneyInput extends TextInput
 {
-    private bool|Closure $invertedColors = false;
-    private bool|Closure $invertedValues = false;
+    private bool | Closure $invertedColors = false;
+
+    private bool | Closure $invertedValues = false;
 
     protected function setUp(): void
     {
@@ -17,16 +20,17 @@ class MoneyInput extends TextInput
 
         $this->numeric()->step(0.01)->prefix(Currencies::getSymbol(config('app.currency')));
 
-        $this->extraInputAttributes(function(MoneyInput $component) {
+        $this->extraInputAttributes(function (MoneyInput $component) {
             $inverted_colors = $this->evaluate($this->invertedColors) ? 1 : 0;
             $path = $component->getStatePath();
+
             return [
                 'x-data' => "{path: '$path', state: \$wire.\$entangle('$path')}",
                 'x-bind:class' => "money_color_class(state, $inverted_colors)",
             ];
         });
 
-        $this->dehydrateStateUsing(function($state) {
+        $this->dehydrateStateUsing(function ($state) {
             if (empty($state)) {
                 return $state;
             }
@@ -36,7 +40,7 @@ class MoneyInput extends TextInput
             return $state * $multiplier;
         });
 
-        $this->formatStateUsing(function($state) {
+        $this->formatStateUsing(function ($state) {
             if (empty($state)) {
                 return $state;
             }
@@ -47,15 +51,17 @@ class MoneyInput extends TextInput
         });
     }
 
-    public function invertColors(bool|Closure $inverted): static
+    public function invertColors(bool | Closure $inverted): static
     {
         $this->invertedColors = $inverted;
+
         return $this;
     }
 
-    public function invertValues(bool|Closure $invert): static
+    public function invertValues(bool | Closure $invert): static
     {
         $this->invertedValues = $invert;
+
         return $this;
     }
 }

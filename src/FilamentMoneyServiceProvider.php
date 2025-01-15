@@ -2,7 +2,8 @@
 
 namespace DefStudio\FilamentMoney;
 
-use Filament\Support\Assets\AlpineComponent;
+use DefStudio\FilamentMoney\Commands\FilamentMoneyCommand;
+use DefStudio\FilamentMoney\Testing\TestsFilamentMoney;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
@@ -13,8 +14,6 @@ use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use DefStudio\FilamentMoney\Commands\FilamentMoneyCommand;
-use DefStudio\FilamentMoney\Testing\TestsFilamentMoney;
 
 class FilamentMoneyServiceProvider extends PackageServiceProvider
 {
@@ -86,7 +85,7 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            //Css::make('filament-money-styles', __DIR__ . '/../resources/dist/filament-money.css'),
+            // Css::make('filament-money-styles', __DIR__ . '/../resources/dist/filament-money.css'),
             Js::make('filament-money-scripts', __DIR__ . '/../resources/dist/filament-money.js'),
         ];
     }
