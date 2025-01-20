@@ -17,13 +17,17 @@ class MoneyColumn extends TextColumn
 
     protected bool | Closure $hiddenZeros = false;
 
+    protected bool | Closure $absolute = false;
+
     protected function setUp(): void
     {
         $this->money();
 
         $this->alignRight();
 
-        $this->color(fn ($state) => app(MoneyColor::class)->getFilamentColor($state, $this->evaluate($this->invertedColor)));
+        $this->color(fn ($state) => app(MoneyColor::class)
+            ->getFilamentColor($state, $this->evaluate($this->invertedColor))
+        );
 
         $this->formatStateUsing(function ($state) {
             if ($state == 0 && $this->evaluate($this->hiddenZeros)) {
@@ -40,6 +44,10 @@ class MoneyColumn extends TextColumn
 
             if ($this->evaluate($this->invertedValue)) {
                 $state = -$state;
+            }
+
+            if($this->evaluate($this->absolute)) {
+                $state = abs($state);
             }
 
             return Number::currency($state, config('app.currency'), config('app.locale'));
@@ -64,6 +72,12 @@ class MoneyColumn extends TextColumn
     {
         $this->invertedColor = $invert;
 
+        return $this;
+    }
+
+    public function absolute(bool | Closure $absolute = true): self
+    {
+        $this->absolute = $absolute;
         return $this;
     }
 }
