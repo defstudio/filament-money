@@ -1,10 +1,9 @@
-<?php
+<?php /** @noinspection PhpUnused */
 
 namespace DefStudio\FilamentMoney\Infolists\Components;
 
 use Closure;
 use DefStudio\FilamentMoney\Actions\MoneyColor;
-use DefStudio\FilamentMoney\Forms\Components\MoneyInput;
 use Filament\Infolists\Components\TextEntry;
 use Symfony\Component\Intl\Currencies;
 
