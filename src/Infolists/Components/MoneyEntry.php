@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnused */
+<?php
+
+/** @noinspection PhpUnused */
 
 namespace DefStudio\FilamentMoney\Infolists\Components;
 
@@ -22,16 +24,16 @@ class MoneyEntry extends TextEntry
         $this->numeric(2)
             ->prefix(Currencies::getSymbol(config('app.currency')));
 
-        $this->color(function(float|null $state){
-           if($state === null ){
-               return null;
-           }
+        $this->color(function (?float $state) {
+            if ($state === null) {
+                return null;
+            }
 
-           if($state == 0){
-               return null;
-           }
+            if ($state == 0) {
+                return null;
+            }
 
-           return app(MoneyColor::class)->getFilamentColor($state, $this->evaluate($this->invertedColors));
+            return app(MoneyColor::class)->getFilamentColor($state, $this->evaluate($this->invertedColors));
         });
 
         $this->formatStateUsing(function ($state) {
@@ -43,14 +45,13 @@ class MoneyEntry extends TextEntry
 
             $state = $state * $multiplier;
 
-            if($this->evaluate($this->absolute)){
+            if ($this->evaluate($this->absolute)) {
                 $state = abs($state);
             }
 
             return $state;
         });
     }
-
 
     public function invertColors(bool | Closure $inverted): static
     {
