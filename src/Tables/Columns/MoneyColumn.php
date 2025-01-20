@@ -25,8 +25,9 @@ class MoneyColumn extends TextColumn
 
         $this->alignRight();
 
-        $this->color(fn ($state) => app(MoneyColor::class)
-            ->getFilamentColor($state, $this->evaluate($this->invertedColor))
+        $this->color(
+            fn ($state) => app(MoneyColor::class)
+                ->getFilamentColor($state, $this->evaluate($this->invertedColor))
         );
 
         $this->formatStateUsing(function ($state) {
@@ -46,7 +47,7 @@ class MoneyColumn extends TextColumn
                 $state = -$state;
             }
 
-            if($this->evaluate($this->absolute)) {
+            if ($this->evaluate($this->absolute)) {
                 $state = abs($state);
             }
 
@@ -78,6 +79,7 @@ class MoneyColumn extends TextColumn
     public function absolute(bool | Closure $absolute = true): self
     {
         $this->absolute = $absolute;
+
         return $this;
     }
 }
