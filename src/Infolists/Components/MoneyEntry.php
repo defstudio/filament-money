@@ -22,7 +22,7 @@ class MoneyEntry extends TextEntry
         parent::setUp();
 
         $this->numeric(2)
-            ->prefix(Currencies::getSymbol(config('app.currency')));
+            ->prefix(Currencies::getSymbol());
 
         $this->color(function (?float $state) {
             if ($state === null) {

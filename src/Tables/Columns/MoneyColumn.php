@@ -51,7 +51,7 @@ class MoneyColumn extends TextColumn
                 $state = abs($state);
             }
 
-            return Number::currency($state, config('app.currency'), config('app.locale'));
+            return Number::currency($state);
         });
     }
 

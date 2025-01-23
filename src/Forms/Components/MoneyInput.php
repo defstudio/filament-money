@@ -6,6 +6,7 @@ namespace DefStudio\FilamentMoney\Forms\Components;
 
 use Closure;
 use Filament\Forms\Components\TextInput;
+use Illuminate\Support\Number;
 use Symfony\Component\Intl\Currencies;
 
 class MoneyInput extends TextInput
@@ -18,7 +19,7 @@ class MoneyInput extends TextInput
     {
         parent::setUp();
 
-        $this->numeric()->step(0.01)->prefix(Currencies::getSymbol(config('app.currency')));
+        $this->numeric()->step(0.01)->prefix(Currencies::getSymbol(Number::defaultCurrency()));
 
         $this->extraInputAttributes(function (MoneyInput $component) {
             $inverted_colors = $this->evaluate($this->invertedColors) ? 1 : 0;
