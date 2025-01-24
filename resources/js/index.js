@@ -18,7 +18,7 @@ window.round_number = function(num, scale = 2) {
 }
 
 window.format_money = function(value, scale = 2) {
-    return '€ ' + format_number(value, scale);
+    return window.filamentData.currencySymbol + ' ' + format_number(value, scale);
 }
 
 window.format_number = function(value, scale = 2) {
