@@ -26,7 +26,7 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name(static::$name)
-            ->hasInstallCommand(function(InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command) {
                 $command
                     ->publishConfigFile()
                     ->publishMigrations()
@@ -45,9 +45,7 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void
-    {
-    }
+    public function packageRegistered(): void {}
 
     public function packageBooted(): void
     {
@@ -67,7 +65,7 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
 
         // Handle Stubs
         if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__.'/../stubs/') as $file) {
+            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
                 $this->publishes([
                     $file->getRealPath() => base_path("stubs/filament-money/{$file->getFilename()}"),
                 ], 'filament-money-stubs');
@@ -89,8 +87,8 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            Css::make('filament-money-styles', __DIR__.'/../resources/dist/filament-money.css'),
-            Js::make('filament-money-scripts', __DIR__.'/../resources/dist/filament-money.js'),
+            Css::make('filament-money-styles', __DIR__ . '/../resources/dist/filament-money.css'),
+            Js::make('filament-money-scripts', __DIR__ . '/../resources/dist/filament-money.js'),
         ];
     }
 
