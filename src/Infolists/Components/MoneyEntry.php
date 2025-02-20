@@ -7,6 +7,7 @@ namespace DefStudio\FilamentMoney\Infolists\Components;
 use Closure;
 use DefStudio\FilamentMoney\Actions\MoneyColor;
 use Filament\Infolists\Components\TextEntry;
+use Illuminate\Support\Number;
 use Symfony\Component\Intl\Currencies;
 
 class MoneyEntry extends TextEntry
