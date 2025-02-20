@@ -10,10 +10,12 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Number;
 use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Symfony\Component\Intl\Currencies;
 
 class FilamentMoneyServiceProvider extends PackageServiceProvider
 {
@@ -121,6 +123,9 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
      */
     protected function getScriptData(): array
     {
-        return [];
+        return [
+            'currency' => Number::defaultCurrency(),
+            'currencySymbol' => Currencies::getSymbol(Number::defaultCurrency()),
+        ];
     }
 }
