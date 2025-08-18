@@ -2,6 +2,19 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v4.0.0 - 2025-08-18
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/4
+* Bump axios from 1.7.9 to 1.9.0 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/5
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/6
+* Bump form-data from 4.0.1 to 4.0.4 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/7
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/8
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/9
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v1.2.2...v4.0.0
+
 ## v1.2.2 - 2025-05-12
 
 **Full Changelog**: https://github.com/defstudio/filament-money/compare/v1.2.1...v1.2.2
