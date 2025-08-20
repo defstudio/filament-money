@@ -2,6 +2,10 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v4.0.1 - 2025-08-20
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v4.0.0...v4.0.1
+
 ## v4.0.0 - 2025-08-18
 
 ### What's Changed
