@@ -1,9 +1,0 @@
-@import '../../vendor/filament/filament/resources/css/theme.css';
-
-.defstudio-money-color-red {
-    @apply !text-red-600 ![-webkit-text-fill-color:theme(colors.red.600)];
-}
-
-.defstudio-money-color-green {
-    @apply !text-green-600 ![-webkit-text-fill-color:theme(colors.green.600)];
-}

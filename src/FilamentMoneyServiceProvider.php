@@ -5,7 +5,6 @@ namespace DefStudio\FilamentMoney;
 use DefStudio\FilamentMoney\Commands\FilamentMoneyCommand;
 use DefStudio\FilamentMoney\Testing\TestsFilamentMoney;
 use Filament\Support\Assets\Asset;
-use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
@@ -87,7 +86,6 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-            Css::make('filament-money-styles', __DIR__ . '/../resources/dist/filament-money.css'),
             Js::make('filament-money-scripts', __DIR__ . '/../resources/dist/filament-money.js'),
         ];
     }

@@ -8,11 +8,6 @@ use Filament\Support\Colors\Color;
 
 class MoneyColor
 {
-    public function getColorClass(float | null | string $value, bool $inverted = false): string
-    {
-        return $this->computeColor($value, 'class', $inverted) ?? '';
-    }
-
     public function getFilamentColor(float | null | string $value, bool $inverted = false): ?array
     {
         return $this->computeColor($value, 'filament', $inverted);
@@ -46,7 +41,6 @@ class MoneyColor
     protected function red(string $type): string | array
     {
         return match ($type) {
-            'class' => 'defstudio-money-color-red',
             'filament' => Color::Red
         };
     }
@@ -54,7 +48,6 @@ class MoneyColor
     protected function green(string $type): string | array
     {
         return match ($type) {
-            'class' => 'defstudio-money-color-green',
             'filament' => Color::Green
         };
     }
