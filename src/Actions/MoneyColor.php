@@ -13,7 +13,7 @@ class MoneyColor
         return $this->computeColor($value, 'filament', $inverted);
     }
 
-    protected function computeColor(float | null | string $value, string $type, bool $inverted = false): string | array | null
+    public function computeColor(float | null | string $value, string $type, bool $inverted = false): string | array | null
     {
         if (empty($value)) {
             $value = 0;
@@ -41,14 +41,16 @@ class MoneyColor
     protected function red(string $type): string | array
     {
         return match ($type) {
-            'filament' => Color::Red
+            'filament' => Color::Red,
+            'class' => 'text-red-600',
         };
     }
 
     protected function green(string $type): string | array
     {
         return match ($type) {
-            'filament' => Color::Green
+            'filament' => Color::Green,
+            'class' => 'text-green-600',
         };
     }
 }
