@@ -12,11 +12,11 @@ use Symfony\Component\Intl\Currencies;
 
 class MoneyInput extends TextInput
 {
-    private bool|Closure $invertedColors = false;
+    private bool | Closure $invertedColors = false;
 
-    private bool|Closure $invertedValues = false;
+    private bool | Closure $invertedValues = false;
 
-    private bool|Closure $noColors = false;
+    private bool | Closure $noColors = false;
 
     protected function setUp(): void
     {
@@ -24,8 +24,7 @@ class MoneyInput extends TextInput
 
         $this->numeric()->step(0.01)->prefix(Currencies::getSymbol(Number::defaultCurrency()));
 
-
-        $this->extraInputAttributes(function(MoneyInput $component, $state){
+        $this->extraInputAttributes(function (MoneyInput $component, $state) {
             if ($component->evaluate($this->noColors)) {
                 return [];
             }
@@ -39,7 +38,7 @@ class MoneyInput extends TextInput
             ];
         });
 
-        $this->afterStateUpdatedJs(function(MoneyInput $component) {
+        $this->afterStateUpdatedJs(function (MoneyInput $component) {
             if ($component->evaluate($this->noColors)) {
                 return null;
             }
@@ -54,7 +53,7 @@ class MoneyInput extends TextInput
             JS;
         });
 
-        $this->dehydrateStateUsing(function($state) {
+        $this->dehydrateStateUsing(function ($state) {
             if (empty($state)) {
                 return $state;
             }
@@ -64,7 +63,7 @@ class MoneyInput extends TextInput
             return $state * $multiplier;
         });
 
-        $this->formatStateUsing(function($state) {
+        $this->formatStateUsing(function ($state) {
             if (empty($state)) {
                 return $state;
             }
@@ -75,21 +74,21 @@ class MoneyInput extends TextInput
         });
     }
 
-    public function invertColors(bool|Closure $inverted): static
+    public function invertColors(bool | Closure $inverted): static
     {
         $this->invertedColors = $inverted;
 
         return $this;
     }
 
-    public function invertValues(bool|Closure $invert): static
+    public function invertValues(bool | Closure $invert): static
     {
         $this->invertedValues = $invert;
 
         return $this;
     }
 
-    public function noColors(bool|Closure $value = true): static
+    public function noColors(bool | Closure $value = true): static
     {
         $this->noColors = $value;
 
