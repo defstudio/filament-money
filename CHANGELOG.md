@@ -2,6 +2,22 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v5.0.0 - 2026-03-17
+
+### What's Changed
+
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/11
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/12
+* Bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/14
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/10
+* filament 5 upgrade by @MarioGattolla in https://github.com/defstudio/filament-money/pull/13
+
+### New Contributors
+
+* @MarioGattolla made their first contribution in https://github.com/defstudio/filament-money/pull/13
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v4.0.3...v5.0.0
+
 ## v4.0.3 - 2025-10-13
 
 **Full Changelog**: https://github.com/defstudio/filament-money/compare/v4.0.2...v4.0.3
