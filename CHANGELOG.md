@@ -2,6 +2,17 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v5.0.1 - 2026-06-18
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/15
+* Bump dependabot/fetch-metadata from 3.0.0 to 3.1.0 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/16
+* Bump esbuild from 0.25.0 to 0.28.1 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/17
+* laravel 13 by @MarioGattolla in https://github.com/defstudio/filament-money/pull/18
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v5.0.0...v5.0.1
+
 ## v5.0.0 - 2026-03-17
 
 ### What's Changed
