@@ -2,6 +2,14 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v5.0.2 - 2026-06-19
+
+### What's Changed
+
+* laravel 13 by @MarioGattolla in https://github.com/defstudio/filament-money/pull/19
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v5.0.1...v5.0.2
+
 ## v5.0.1 - 2026-06-18
 
 ### What's Changed
