@@ -2,6 +2,14 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v5.0.3 - 2026-10-19
+
+### What's Changed
+
+* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/defstudio/filament-money/pull/20
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v5.0.2...v5.0.3
+
 ## v5.0.2 - 2026-06-19
 
 ### What's Changed
