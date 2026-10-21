@@ -7,7 +7,6 @@ namespace DefStudio\FilamentMoney\Tables\Columns;
 use Closure;
 use DefStudio\FilamentMoney\Actions\MoneyColor;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 use Illuminate\Support\Number;
 
 class MoneyColumn extends TextColumn
