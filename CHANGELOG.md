@@ -2,6 +2,16 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## v5.0.4 - 2026-10-21
+
+### What's Changed
+
+- **currency and locale in table** by fabio-ivona
+- **Update CHANGELOG** by fabio-ivona
+- **Fix styling** by fabio-ivona
+
+**Full Changelog**: https://github.com/defstudio/filament-money/compare/v5.0.3...v5.0.4
+
 ## v5.0.3 - 2026-10-19
 
 ### What's Changed
