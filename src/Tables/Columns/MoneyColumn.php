@@ -56,8 +56,8 @@ class MoneyColumn extends TextColumn
                 $state = abs($state);
             }
 
-            $currency = $column->evaluate($column->currency) ?? Table::$defaultCurrency;
-            $locale = $column->evaluate($column->locale) ?? Table::$defaultNumberLocale ?? config('app.locale');
+            $currency = $column->evaluate($column->currency) ?? '';
+            $locale = $column->evaluate($column->locale) ?? config('app.locale');
 
             return Number::currency($state, $currency, $locale);
         });
